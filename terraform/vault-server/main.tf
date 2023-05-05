@@ -29,7 +29,7 @@ resource "azurerm_linux_virtual_machine" "linux" {
 
   admin_ssh_key {
     username   = "vadmin"
-    public_key = file("./.ssh/id_rsa.pub")
+    public_key = file("/Users/aharness/.ssh/id_rsa.pub")
   }
 
   os_disk {
@@ -106,7 +106,7 @@ resource "null_resource" "deploy-vault-instance" {
     connection {
       type        = "ssh"
       user        = "vadmin"
-      private_key = file("./.ssh/id_rsa")
+      private_key = file("~/.ssh/id_rsa")
       host        = azurerm_linux_virtual_machine.linux.public_ip_address
     }
   }
@@ -118,7 +118,7 @@ resource "null_resource" "deploy-vault-instance" {
     connection {
       type        = "ssh"
       user        = "vadmin"
-      private_key = file("./.ssh/id_rsa")
+      private_key = file("~/.ssh/id_rsa")
       host        = azurerm_linux_virtual_machine.linux.public_ip_address
     }
   }
@@ -130,7 +130,7 @@ resource "null_resource" "deploy-vault-instance" {
     connection {
       type        = "ssh"
       user        = "vadmin"
-      private_key = file("./.ssh/id_rsa")
+      private_key = file("~/.ssh/id_rsa")
       host        = azurerm_linux_virtual_machine.linux.public_ip_address
     }
   }
@@ -144,7 +144,7 @@ resource "null_resource" "deploy-vault-instance" {
     connection {
       type        = "ssh"
       user        = "vadmin"
-      private_key = file("./.ssh/id_rsa")
+      private_key = file("~/.ssh/id_rsa")
       host        = azurerm_linux_virtual_machine.linux.public_ip_address
     }
   }
